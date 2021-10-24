@@ -11,3 +11,10 @@ import cv2
 app.config['INITIAL_FILE_UPLOADS'] = 'app/static/uploads'
 app.config['EXISTING_FILE'] = 'app/static/original'
 app.config['GENERATED_FILE'] = 'app/static/generated'
+
+
+
+
+#  Main function
+if __name__ == '__main__':
+    app.run(debug=True)

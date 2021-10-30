@@ -1,10 +1,11 @@
-# Import package dependencies
-from flask import app
+# Important package dependencies
+import os
+from flask import request, render_template
+from app import app
 from skimage.metrics import structural_similarity
 import imutils
-from PIL import Image
-import requests
 import cv2
+from PIL import Image
 
 
 # Add path to config
@@ -13,7 +14,13 @@ app.config['EXISTING_FILE'] = 'app/static/original'
 app.config['GENERATED_FILE'] = 'app/static/generated'
 
 
+# Route to Home page
+@app.route("/", methods=["GET", "POST"])
+def index():
 
+    # If request is GET, execute
+    if request.method == "GET":
+        return render_template("index.html")
 
 #  Main function
 if __name__ == '__main__':

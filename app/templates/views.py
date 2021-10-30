@@ -44,6 +44,10 @@ def index():
     uploaded_image = cv2.imread(os.path.join(
         app.config['INITIAL_FILE_UPLOADS'], 'image.jpg'))
 
+    # Convert the images into grey-scale
+    original_grey = cv2.cvtColor(original_image, cv2.COLOR_BGR2GRAY)
+    uploaded_grey = cv2.cvtColor(uploaded_image, cv2.COLOR_BGR2GRAY)
+
 
 #  Main function
 if __name__ == '__main__':

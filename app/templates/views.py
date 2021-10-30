@@ -27,6 +27,10 @@ def index():
         file_upload = request.files['file_upload']
         filename = file_upload.filename
 
+    # Resize uploaded image then save
+    uploaded_image = Image.open(file_upload).resize((250, 160))
+    uploaded_image.save(os.path.join(app.config['INITIAL_FILE_UPLOADS'], 'image.jpg')) #S aves Image
+
 #  Main function
 if __name__ == '__main__':
     app.run(debug=True)

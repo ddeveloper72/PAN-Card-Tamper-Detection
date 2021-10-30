@@ -49,8 +49,16 @@ def index():
     uploaded_grey = cv2.cvtColor(uploaded_image, cv2.COLOR_BGR2GRAY)
 
     # Compute the Structural Similarity Index measure (SSIM) between the two images, ensuring that the difference image is returned
-    (score, diff) = structural_similarity(original_grey, uploaded_grey, full=True)
+    (score, diff) = structural_similarity(
+        original_grey, uploaded_grey, full=True)
     diff = (diff * 255).astype("uint8")
+
+    # calculate the threshhold and contours
+    thresh = cv2.threshold(
+        diff, 0, 255, cv2.THRESH_BINARY_INV | cv2.THRESH_OTSU)[1]
+    contours = cv2.findContours(thresh.copy(), cv2.RETR_EXTERNAL,
+                            cv2.CHAIN_APPROX_SIMPLE)
+    contours = imutils.grab_contours(contours)
 
 
 #  Main function

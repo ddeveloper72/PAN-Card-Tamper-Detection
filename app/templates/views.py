@@ -67,6 +67,12 @@ def index():
         cv2.rectangle(original_image, (x, y), (x + w, y + h), (0, 0, 255), 2)
         cv2.rectangle(uploaded_image, (x, y), (x + w, y + h), (0, 0, 255), 2)
 
+    # save output images if required
+    cv2.imwrite(os.path.join(app.config['GENERATED_FILE'], 'image_original.jpg'), original_image)
+    cv2.imwrite(os.path.join(app.config['GENERATED_FILE'], 'image_uploaded.jpg'), uploaded_image)
+    cv2.imwrite(os.path.join(app.config['GENERATED_FILE'], 'image_diff.jpg'), diff)
+    cv2.imwrite(os.path.join(app.config['GENERATED_FILE'], 'image_thresh.jpg'), thresh)
+    return render_template('index.html', pred=str(round(score * 100, 2)) + '%' + ' correct')
 
 #  Main function
 if __name__ == '__main__':

@@ -48,6 +48,10 @@ def index():
     original_grey = cv2.cvtColor(original_image, cv2.COLOR_BGR2GRAY)
     uploaded_grey = cv2.cvtColor(uploaded_image, cv2.COLOR_BGR2GRAY)
 
+    # Compute the Structural Similarity Index measure (SSIM) between the two images, ensuring that the difference image is returned
+    (score, diff) = structural_similarity(original_grey, uploaded_grey, full=True)
+    diff = (diff * 255).astype("uint8")
+
 
 #  Main function
 if __name__ == '__main__':

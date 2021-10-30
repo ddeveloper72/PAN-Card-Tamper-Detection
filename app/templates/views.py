@@ -29,7 +29,14 @@ def index():
 
     # Resize uploaded image then save
     uploaded_image = Image.open(file_upload).resize((250, 160))
-    uploaded_image.save(os.path.join(app.config['INITIAL_FILE_UPLOADS'], 'image.jpg')) #S aves Image
+    uploaded_image.save(os.path.join(
+        app.config['INITIAL_FILE_UPLOADS'], 'image.jpg')) #Saves Tampered Image
+
+    # Resize original image so it is the same size as the uploaded image
+    original_image = Image.open(file_upload).resize((250, 160))
+    original_image.save(os.path.join(
+        app.config['EXISTING_FILE'], 'image.jpg'))  # Saves Original Image
+
 
 #  Main function
 if __name__ == '__main__':

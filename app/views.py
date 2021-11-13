@@ -33,9 +33,10 @@ def index():
         app.config['INITIAL_FILE_UPLOADS'], 'image.jpg'))  # Saves Tampered Image
 
     # Resize original image so it is the same size as the uploaded image
-    original_image = Image.open(file_upload).resize((250, 160))
-    original_image.save(os.path.join(
-        app.config['EXISTING_FILE'], 'image.jpg'))  # Saves Original Image
+    original_image = Image.open(os.path.join(
+        app.config['EXISTING_FILE'], 'image.jpg')).resize((250, 160))
+    # Saves Original Image
+    original_image.save(os.path.join(app.config['EXISTING_FILE'], 'image.jpg'))
 
     # Read original and uploaded image as an array
     original_image = cv2.imread(os.path.join(

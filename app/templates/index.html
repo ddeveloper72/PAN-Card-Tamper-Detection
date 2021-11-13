@@ -3,11 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
     <link rel="stylesheet" href="../static/css/style.css">
     <title>PAN Card Tamper Detector</title>
 </head>
 <body>
+
+    <nav class="navbar">
+        <div class="navnar-container">
+            <a class="navbar-brand">Pan Card Validation</a>
+        </div>
+    </nav>
+    
+    <div class="container">
+        <label for="file_upload" class="form-label">Upload Pan Card</label>
+        <form class="form">
+            <input class="form-control validate" type="file" id="file_upload" placeholder="Search for file"
+                aria-label="Choose File">
+        </form>
+
+        <button class="btn" type="button">Check</button>
+
+        <h4>{{pred}}</h4>
+    </div>
     
 </body>
 </html>

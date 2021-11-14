@@ -1,4 +1,5 @@
 Flask==2.0.0
+gunicorn==20.1.0
 imutils==0.5.4
 Keras==2.7.0
 opencv-python-headless==4.5.4.58

@@ -1,31 +1,41 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="../static/css/style.css">
     <title>PAN Card Tamper Detector</title>
 </head>
+
 <body>
 
     <nav class="navbar">
-        <div class="navnar-container">
-            <a class="navbar-brand">Pan Card Validation</a>
+        <div class="navbar-container">
+            <a class="navbar-brand" href="{{ url_for('index') }}">Pan Card Validation</a>
         </div>
     </nav>
-    
+
     <div class="container">
-        <label for="file_upload" class="form-label">Upload Pan Card</label>
-        <form class="form">
-            <input class="form-control validate" type="file" id="file_upload" placeholder="Search for file"
-                aria-label="Choose File">
+        <form class="form" name="PanCardUpload" action='/' method="post" enctype="multipart/form-data">
+            <label for="file_upload" class="form-label">Upload Pan Card:</label>
+            <div class="file-upload-wrapper" data-text="Select your file!">
+                <input class="file-upload-field" type="file" name="file_upload" id="file_upload">
+            </div>
+            <button class="actions" id="check" type="submit">Check</button>
+            <a class="refresh" href="{{ url_for('index') }}" aria-current="page">REFRESH</a>
         </form>
 
-        <button class="btn" type="button">Check</button>
 
-        <h4>{{pred}}</h4>
+        <h4 id="result">{{pred}}</h4>
+
     </div>
-    
+
+    <script src="https://code.jquery.com/jquery-3.6.0.slim.min.js"
+        integrity="sha256-u7e5khyithlIdTpu22PHhENmPcRdFiHRjhAuHcs05RI=" crossorigin="anonymous"></script>
+    <script language="JavaScript" type="text/javascript" src="../static/js/scripts.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.3/jquery.validate.min.js"></script>
 </body>
+
 </html>

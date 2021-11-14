@@ -1,0 +1,4 @@
+# Remove cached files
+.venv/*
+.vscode/*
+__pycache__/*

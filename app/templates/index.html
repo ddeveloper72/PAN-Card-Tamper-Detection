@@ -5,6 +5,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="https://kit.fontawesome.com/aba3630d03.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="../static/css/style.css">
     <title>PAN Card Tamper Detector</title>
 </head>
@@ -12,8 +13,19 @@
 <body>
 
     <nav class="navbar">
-        <div class="navbar-container">
-            <a class="navbar-brand" href="{{ url_for('index') }}">Pan Card Validation</a>
+        <a href="{{ url_for('index') }}">Pan Card Validation</a>
+        <div class="dropdown">
+            <button class="dropbtn">Test Images
+                <i class="fa fa-caret-down"></i>
+            </button>
+            <div class="dropdown-content">
+                <a href="{{ url_for('static', filename='sample_data/original.jpg') }}" target="_blank"><span
+                        title="select save link as..."><i class="fas fa-download"></i>
+                        Original Image</span></a>
+                <a href="{{ url_for('static', filename='sample_data/tampered.jpg') }}" target="_blank"><span
+                        title="select save link as..."><i class="fas fa-download"></i>
+                        Tampered Image</span></a>
+            </div>
         </div>
     </nav>
 

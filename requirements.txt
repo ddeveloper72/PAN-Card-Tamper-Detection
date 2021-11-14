@@ -4,6 +4,7 @@ imutils==0.5.4
 keras==2.7.0
 opencv-python==4.5.4.58
 Pillow==8.4.0
+portalocker==2.3.2
 skia-python==87.3
 tensorflow-cpu==2.7.0
 scikit-image==0.18.3

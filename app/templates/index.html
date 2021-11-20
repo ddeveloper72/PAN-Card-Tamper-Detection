@@ -37,11 +37,15 @@
                 <input class="file-upload-field" type="file" name="file_upload" id="file_upload">
             </div>
             <button class="actions" id="check" type="submit">Check</button>
-            <a class="refresh" href="{{ url_for('index') }}" aria-current="page">REFRESH</a>
+            <div class="result">
+                {% if pred %}
+                <h4 id="result">{{pred}}</h4>
+                {% else %}
+                <h4>result...</h4>
+                {% endif %}
+            </div>
+            <a class="refresh" href="{{ url_for('index') }}" aria-current="page"><i class="fas fa-sync-alt"></i> Page</a>
         </form>
-
-
-        <h4 id="result">{{pred}}</h4>
 
     </div>
 

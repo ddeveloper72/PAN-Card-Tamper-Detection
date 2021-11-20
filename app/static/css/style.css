@@ -195,9 +195,19 @@ body {
   transform: scale(0.9);
 }
 
-h2 {
-  font-size: 24px;
-  color: black;
+.result {
+  display: block;
+  border: 1px solid #028140;
+  border-radius: 5px;
+  background-color: #4daf7c;
+  padding: 0;
+  margin-top: 20px;
+  width: 50%;
+  text-align: center;
+}
+
+h4 {
+  color: #2b2a2a;
 }
 
 a.refresh {

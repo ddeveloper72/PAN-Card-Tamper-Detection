@@ -14,13 +14,14 @@ A Permanent Account Number or PAN is a means of identifying various taxpayers in
 * draw a bounding box around the areas with contours
 * create difference and threshold images to highlight areas of the PAN card so differences between the original and the tampered cared are shown in contrast
 
-### 🚧 In development: build a user web interface using Jinja 🚧
+### Build a user web interface using Jinja
 
 * reconfigure the google coLab sandbox application to run in a python Jinja environment
 * Updated requirements to latest release for the dependencies based on the date of this deployment.
 * Used JQuery to process the form validation.  
   * Only jpg image files will work with this application.
   * Uploading an empty form field will break the app.
+* Use Jinja if else to show original PanCard on app load then processed cv2 computer vision images with notes to user.
 
 ### Deployment
 

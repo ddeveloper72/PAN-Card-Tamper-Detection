@@ -68,6 +68,7 @@ body {
   text-decoration: none;
   display: block;
   text-align: left;
+  z-index: 30;
 }
 
 .dropdown-content a:hover {
@@ -211,8 +212,7 @@ h4 {
 }
 
 a.refresh {
-  margin-top: 20px;
-  color: #000;
+  float: right;
 }
 
 a {
@@ -284,4 +284,8 @@ a:active {
 .thresh {
   grid-column: 1;
   grid-row: 3 / 4;
+}
+
+.test-image {
+  margin-top: 20px;
 }

@@ -1,3 +1,6 @@
 .venv/*
 .vscode/*
 *.pyc
+app/static/generated/*
+app/static/original/*
+app/static/uploads/*

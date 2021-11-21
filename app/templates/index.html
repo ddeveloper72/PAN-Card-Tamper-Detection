@@ -28,6 +28,8 @@
                         Tampered Image</span></a>
             </div>
         </div>
+        <a class="refresh" href="{{ url_for('index') }}" aria-current="page"><i class="fas fa-sync-alt"></i>
+            Page</a>
     </nav>
 
     <div class="container">
@@ -45,8 +47,7 @@
                 <h4>result...</h4>
                 {% endif %}
             </div>
-            <a class="refresh" href="{{ url_for('index') }}" aria-current="page"><i class="fas fa-sync-alt"></i>
-                Page</a>
+            
         </form>
 
         <div class="image-compare">

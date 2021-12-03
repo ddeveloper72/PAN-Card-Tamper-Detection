@@ -20,16 +20,35 @@ body {
 
 .navbar a {
   float: left;
+  align-self: center;
   font-size: 16px;
   color: #fff;
   text-align: center;
-  padding: 14px 16px;
+  padding: 15px 16px;
   text-decoration: none;
+}
+
+.navbar a.refresh {
+  float: right;
+  margin-right: 0;
 }
 
 .dropdown {
   float: left;
   overflow: hidden;
+}
+
+.result {
+  float: left;
+  overflow: hidden;
+  background-color: brown;
+  padding: 0 5px;
+  border-radius: 5px;
+  border: none;
+  align-items: center;
+}
+.result p {
+  color: #fff;
 }
 
 .dropdown .dropbtn {
@@ -45,7 +64,7 @@ body {
 
 .navbar a:hover,
 .dropdown:hover .dropbtn {
-  background-color: red;
+  background-color: #ff0000;
 }
 
 .dropbtn .span:hover {
@@ -58,7 +77,7 @@ body {
   background-color: #f9f9f9;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
-  z-index: 1;
+  z-index: 100;
 }
 
 .dropdown-content a {
@@ -107,7 +126,7 @@ body {
   position: absolute;
   padding: 10px;
   top: 50px;
-  color: red;
+  color: #ff0000;
 }
 
 .file-upload-wrapper {
@@ -196,26 +215,16 @@ body {
   transform: scale(0.9);
 }
 
-.result {
-  display: block;
-  border: 1px solid #028140;
-  border-radius: 5px;
-  background-color: #4daf7c;
-  padding: 0;
-  margin-top: 20px;
-  width: 50%;
-  text-align: center;
-}
-
 h4 {
   color: #2b2a2a;
 }
 
-a.refresh {
-  float: right;
+i {
+  padding: 2px 5px;
 }
 
-a {
+a,
+.dropdown p {
   color: #fff;
 }
 
@@ -288,4 +297,28 @@ a:active {
 
 .test-image {
   margin-top: 20px;
+}
+
+@media only screen and (max-width: 565px) {
+  .navbar a {
+    padding: 14px 4px;
+  }
+
+  .container {
+    min-width: 100%;
+  }
+  .images {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .images p {
+    padding: 10px 10px;
+  }
+
+  .file-upload-wrapper {
+    max-width: 70%;
+  }
 }

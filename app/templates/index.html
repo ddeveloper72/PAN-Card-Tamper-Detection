@@ -15,10 +15,17 @@
 
     <nav class="navbar">
         <a href="{{ url_for('index') }}">Pan Card Validation</a>
+        {% if pred %}
+        <div class="result">
+            <p id="result">{{pred}}</p>
+        </div>
+
+        {% else %}
         <div class="dropdown">
             <button class="dropbtn">Test Images
                 <i class="fa fa-caret-down"></i>
             </button>
+
             <div class="dropdown-content">
                 <a href="{{ url_for('static', filename='sample_data/original.jpg') }}" target="_blank"><span
                         title="select save link as..."><i class="fas fa-download"></i>
@@ -28,6 +35,7 @@
                         Tampered Image</span></a>
             </div>
         </div>
+        {% endif %}
         <a class="refresh" href="{{ url_for('index') }}" aria-current="page"><i class="fas fa-sync-alt"></i>
             Page</a>
     </nav>
@@ -39,15 +47,7 @@
                 <input class="file-upload-field" type="file" name="file_upload" id="file_upload">
             </div>
             <button class="actions" id="check" type="submit">Check</button>
-            <div class="result">
-                {% if pred %}
-                <h4 id="result">{{pred}}</h4>
 
-                {% else %}
-                <h4>result...</h4>
-                {% endif %}
-            </div>
-            
         </form>
 
         <div class="image-compare">
@@ -76,7 +76,7 @@
                 <div class="test_02">
                     <img src="{{ url_for('static', filename='generated/image_diff.jpg') }}" title="original Pan Card"
                         alt="original Pan Card">
-                    <p>cv2 computer vision used to show differences between your image<br>and the original Pan Card
+                    <p>cv2 computer vision used to show differences between your image and the original Pan Card
                     </p>
                 </div>
 
